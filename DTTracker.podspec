@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "DTTracker"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "DTTracker SDK"
 
   s.description  = "you can use DTTracker to track your user behavior in your app"
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.author             = { "liuyunclouder" => "liuyunclouder@gmail.com" }
 
 
-  s.platform     = :ios, "6.0"
+  s.platform     = :ios, "8.0"
 
 
 
