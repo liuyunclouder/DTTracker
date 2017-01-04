@@ -42,6 +42,7 @@ DTTracker 支持使用CocoaPods引入：
 
 ### 初始化
 
+	#import <DTTracker/DTTracker.h>
 	
 	DTTrackManager *trackMangar = [DTTrackManager sharedInstanceWithServerURL:@"your_upload_url" token:@"your_app_token" debugMode:DTTrackerDebugAndTrack];
 your\_upload\_url为步骤3中的接口地址，your\_app\_token为步骤2中的appname，发布时debugMode一定要设置为DTTrackerDebugOff。
