@@ -15,16 +15,11 @@ DTTracker 支持使用CocoaPods和手工引入。
 ### CocoaPods
 
 DTTracker 支持使用CocoaPods引入：
-
-\`\`\`ruby
-pod  'DTTracker'
-\`\`\`
-
+	
+	pod  'DTTracker'
 然后install：
-
-\`\`\`bash
-$ pod install
-\`\`\`
+	
+	pod install
 
 ###  手工引入
 克隆本仓库到本地，直接拖拽DTTracker.framework到工程目录下，同时添加libsqlite3和libz.1.2.5
