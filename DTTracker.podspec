@@ -3,10 +3,10 @@ Pod::Spec.new do |s|
 
 
   s.name         = "DTTracker"
-  s.version      = "1.0.0"
+  s.version      = "0.0.1"
   s.summary      = "DTTracker SDK"
 
-  s.description  = "DTTracker SDK description"
+  s.description  = "you can use DTTracker to track your user behavior in your app"
 
   s.homepage     = "https://www.dtstack.com/"
 
@@ -16,15 +16,14 @@ Pod::Spec.new do |s|
 
   s.author             = { "liuyunclouder" => "liuyunclouder@gmail.com" }
 
-  # s.platform     = :ios
+
   s.platform     = :ios, "6.0"
 
 
 
-  s.source       = { :git => "https://github.com/liuyunclouder/DTTracker.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/liuyunclouder/DTTracker.git", :tag => s.version }
 
-  s.source_files  = "DTTracker.framework/Headers/*.h"
-  s.public_header_files = "DTTracker.framework/Headers/*.h"
+
   s.vendored_frameworks = "DTTracker.framework"
 
 
