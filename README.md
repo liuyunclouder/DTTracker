@@ -1,5 +1,4 @@
-![][image-1]![MIT Licence][image-2]
-
+![][image-1] ![][image-2] ![MIT Licence][image-3]
 DTTracker 是袋鼠云官方iOS数据埋点SDK
 
 ## 如何使用
@@ -26,7 +25,7 @@ DTTracker 支持使用Carthage引入：
 
 ### 手工引入
 克隆本仓库到本地，直接拖拽DTTracker.framework到工程目录下，同时添加libsqlite3和libz.1.2.5
-![][image-3]
+![][image-4]
 
 ## 版本支持
 支持iOS 8.0及以上版本
@@ -38,9 +37,9 @@ DTTracker 支持使用Carthage引入：
 
 1. 登录后进入[ https://log.dtstack.com/upload.html#/http ]() 
 2. 根据指示选择解析规则（[解析规则列表][2]允许自定义规则），填写appname和tag，保存好填写的appname，这就是后续初始化时需要的token，点击下一步
-	![][image-4]
-3. 选择接口的协议类型，建议选择https，这样更好地保护您的数据安全，然后复制接口并保存
 	![][image-5]
+3. 选择接口的协议类型，建议选择https，这样更好地保护您的数据安全，然后复制接口并保存
+	![][image-6]
 
 
 ### 初始化
@@ -134,7 +133,8 @@ MIT
 [2]:	https://log.dtstack.com/setting.html#/setting/parser/list
 
 [image-1]:	https://img.shields.io/badge/pod-v1.0.0-green.svg
-[image-2]:	https://img.shields.io/badge/licence-MIT-green.svg
-[image-3]:	http://d.pr/i/qsdW+
-[image-4]:	http://d.pr/i/pVHb+
-[image-5]:	http://d.pr/i/7hDS+
+[image-2]:	https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat
+[image-3]:	https://img.shields.io/badge/licence-MIT-green.svg
+[image-4]:	http://d.pr/i/qsdW+
+[image-5]:	http://d.pr/i/pVHb+
+[image-6]:	http://d.pr/i/7hDS+
