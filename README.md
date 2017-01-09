@@ -10,18 +10,21 @@ DTTracker 是袋鼠云官方iOS数据埋点SDK
 
 
 ## 安装
-DTTracker 支持使用CocoaPods和手工引入。
+DTTracker 支持使用CocoaPods、Carthage和手工引入。
 
 ### CocoaPods
 
 DTTracker 支持使用CocoaPods引入：
-	
+ 
 	pod  'DTTracker'
-然后install：
-	
-	pod install
 
-###  手工引入
+### Carthage
+
+DTTracker 支持使用Carthage引入：
+
+	github "liuyunclouder/DTTracker"
+
+### 手工引入
 克隆本仓库到本地，直接拖拽DTTracker.framework到工程目录下，同时添加libsqlite3和libz.1.2.5
 ![][image-3]
 
@@ -49,7 +52,7 @@ your\_upload\_url为步骤3中的接口地址，your\_app\_token为步骤2中的
 
 #### 运行模式
 
-	
+ 
 	/**
 	 运行模式
 	 */
@@ -61,38 +64,38 @@ your\_upload\_url为步骤3中的接口地址，your\_app\_token为步骤2中的
 	    /** DEBUG模式，并将数据导入到云日志中 */
 	    DTTrackerDebugAndTrack
 	};
-	
+ 
 
 #### 埋点
 埋点记录会根据记录条数和时间选择性上传，同时也会在APP进入后台时执行上传任务，在不影响用户体验的同时尽量保证数据的实时性。
 
 ##### 普通埋点
-	
+ 
 	[[DTTrackManager sharedInstance] trackEvent:@"test plain track" withProperties:@{ @"k1":@"v1"}];
 
 ##### 事务埋点
-	
+ 
 	NSString *transactionID = [[DTTrackManager sharedInstance] trackTransactionBeginWithEvent:@"test transaction track" withProperties:@{
 	                                                                                                 @"test": @"y"
 	                                                                                                 }];
-	    
+	
 	    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 	        [[DTTrackManager sharedInstance] trackCommitWithTransactionID: transactionID];
 	    });
 
 ##### 自动埋点
 会在APP启动和进入后台，以及页面载入和退出时，自动生成埋点记录，见 DTAutoTrackProtocol。
-	
+ 
 	trackMangar.autoTrack = YES;
 
 ##### crash 埋点
 如果设置了trackCrash为YES，DTTracker会把崩溃堆栈信息也记录下来。
-	
+ 
 	trackMangar.trackCrash = YES;
 
 ##### UIControl 埋点
 
-	
+ 
 	self.btn.dt_eventInfo = @{
 	                           @"event": @"btn clicked",
 	                           @"bus": @"311"
@@ -102,7 +105,7 @@ your\_upload\_url为步骤3中的接口地址，your\_app\_token为步骤2中的
 如果同时使用我们的JS SDK，需要在以下两个方法里添加几行代码，方便Native和H5通信。
 
 UIWebView：
-	
+ 
 	- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
 	    if ([[DTTrackManager sharedInstance] shouldInterceptRequest:request inWebView:webView withProperties:nil]) {
 	        return NO;
@@ -111,13 +114,13 @@ UIWebView：
 	}
 
 WKWebView：
-	
+ 
 	- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
 	    if ([[DTTrackManager sharedInstance] shouldInterceptRequest:navigationAction.request inWebView:webView withProperties:nil]) {
 	        decisionHandler(WKNavigationActionPolicyCancel);
 	        return;
 	    }
-	    
+	
 	    decisionHandler(WKNavigationActionPolicyAllow);
 	}
 
