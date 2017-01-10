@@ -1,6 +1,0 @@
-framework module DTTracker {
-  umbrella header "DTTracker.h"
-
-  export *
-  module * { export * }
-}

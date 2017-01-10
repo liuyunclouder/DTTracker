@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "DTTracker"
-  s.version      = "0.0.2"
+  s.version      = "0.0.1"
   s.summary      = "DTTracker SDK"
 
   s.description  = "you can use DTTracker to track your user behavior in your app"
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
 
 
-  s.author             = { "liuyunclouder" => "liuyunclouder@gmail.com" }
+  s.author       = { "liuyunclouder" => "liuyunclouder@gmail.com" }
 
 
   s.platform     = :ios, "8.0"
@@ -24,16 +24,12 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/liuyunclouder/DTTracker.git", :tag => s.version }
 
 
-  s.vendored_frameworks = "DTTracker.framework"
-
-
-  s.preserve_paths = "DTTracker.framework"
+  s.vendored_frameworks = "frameworks/cocoapods/DTTracker.framework"
 
 
   s.frameworks = "Foundation", "UIKit", "CoreTelephony"
 
   s.libraries = "sqlite3", "z"
-
 
   s.requires_arc = true
 
